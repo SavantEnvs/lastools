@@ -1,0 +1,10 @@
+project: savantenvs/lastools
+target: fuzz_lasindex
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_lasindex/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_lasindex
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_lasindex/fuzz_lasindex.dict
